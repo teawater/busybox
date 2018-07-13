@@ -83,7 +83,7 @@ int sync_main(int argc UNUSED_PARAM, char **argv IF_NOT_DESKTOP(UNUSED_PARAM))
 			 * syncfs is documented to only fail with EBADF,
 			 * which can't happen here. So, no error checks.
 			 */
-			syncfs(fd);
+			sync();
 			goto do_close;
 		}
 		if (fsync(fd)) {
